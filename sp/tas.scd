@@ -1,0 +1,119 @@
+s.options.device_("ASIO : ASIO4ALL v2");
+
+o=s.options
+
+o.memSize;
+
+o.memSize = 2.pow(16);
+
+s.options.numOutputBusChannels= 18;
+
+s.record(numChannels:2);
+////////////////////////////////
+//////////////////////////////////////////////////////
+
+(
+(
+SynthDef(\sp1,
+	{
+		arg  freq1, fr1;
+		var audio,env,mul;
+
+		mul =TExpRand.kr(20,20000,Dust.kr(44));
+
+		env = EnvGen.ar(Env.perc(releaseTime:32),doneAction:2);
+		#w, x, y, z = PanB.ar(SinOsc.ar(fr1*mul)* AmpComp.kr(fr1*mul, 80,1.1),SinOsc.kr(freq1),gain:1);
+
+		audio =   DecodeB2.ar(16, w, x, y, 1);
+
+		Out.ar(2,audio*env);
+}).add
+);
+////////////////////////////////////////////////////////
+(SynthDef(\tessera1,
+	{
+		var audio;
+		audio= Pan2.ar(FreeVerb.ar(InFeedback.ar(2),0.6,1,1));
+		Out.ar(0,audio);
+}).add;
+);
+
+//////////////////////////
+(
+Tdef(\pattern_tria1,
+
+      {
+
+		1.do({loop({
+(
+ //Synth.new(\sp1, [\gate,1, \fr1,1,\freq1,0.01*10]);
+//Synth.new(\sp1, [\gate,1, \fr1,2,\freq1,0.02*10]);
+//Synth.new(\sp1, [\gate,1, \fr1,3, \freq1,0.03*10]);
+ Synth.new(\sp1, [\gate,1,\fr1,4, \freq1,0.04*10]);
+Synth.new(\sp1, [\gate,1, \fr1,5, \freq1,0.05*10]);
+ Synth.new(\sp1, [\gate,1, \fr1,6, \freq1,0.06*10]);
+Synth.new(\sp1, [\gate,1, \fr1,7, \freq1,0.07*10]);
+ Synth.new(\sp1, [\gate,1, \fr1,8, \freq1,0.08*10]);
+ Synth.new(\sp1, [\gate,1, \fr1,9, \freq1,0.09*10]);
+// Synth.new(\sp1, [\gate,1,\fr1,10, \freq1,0.05*1/2]);
+ Synth.new(\sp1, [\gate,1,\fr1,12, \freq1,0.1*10]);
+Synth.new(\sp1, [\gate,1, \fr1,14, \freq1,0.11*10]);
+Synth.new(\sp1, [\gate,1, \fr1,15, \freq1,0.12*10]);
+Synth.new(\sp1, [\gate,1, \fr1,16, \freq1,0.13*10]);
+Synth.new(\sp1, [\gate,1, \fr1,18, \freq1,0.14*10]);
+Synth.new(\sp1, [\gate,1, \fr1,20, \freq1,0.15*10]);
+Synth.new(\sp1, [\gate,1, \fr1,21, \freq1,0.16*10]);
+//Synth.new(\sp1, [\gate,1, \fr1,22, \freq1,0.4*1/2]);
+Synth.new(\sp1, [\gate,1, \fr1,24, \freq1,0.17*10]);
+Synth.new(\sp1, [\gate,1, \fr1,25, \freq1,0.18*10]);
+Synth.new(\sp1, [\gate,1, \fr1,27, \freq1,0.19*10]);
+Synth.new(\sp1, [\gate,1, \fr1,28, \freq1,0.2*10]);
+Synth.new(\sp1, [\gate,1, \fr1,30, \freq1,0.21*10]);
+Synth.new(\sp1, [\gate,1, \fr1,32, \freq1,0.22*10]);
+//Synth.new(\sp1, [\gate,1, \fr1,33, \freq1,1.1*1/2]);
+Synth.new(\sp1, [\gate,1, \fr1,35, \freq1,0.23*10]);
+Synth.new(\sp1, [\gate,1, \fr1,36, \freq1,0.24*10]);
+Synth.new(\sp1, [\gate,1, \fr1,40, \freq1,0.25*10]);
+Synth.new(\sp1, [\gate,1, \fr1,42, \freq1,0.26*10]);
+//Synth.new(\sp1, [\gate,1, \fr1,44, \freq1,1.6*1/2]);
+Synth.new(\sp1, [\gate,1, \fr1,45, \freq1,0.27*10]);
+Synth.new(\sp1, [\gate,1, \fr1,48, \freq1,0.28*10]);
+Synth.new(\sp1, [\gate,1, \fr1,49, \freq1,0.29*10]);
+//Synth.new(\sp1, [\gate,1, \fr1,50, \freq1,2*1/2]);
+//Synth.new(\sp1, [\gate,1, \fr1,55, \freq1,2.1*1/2]);
+Synth.new(\sp1, [\gate,1, \fr1,56, \freq1,0.3*10]);
+//Synth.new(\sp1, [\gate,1, \fr1,60, \freq1,2.3*1/2]);
+Synth.new(\sp1, [\gate,1, \fr1,64, \freq1,0.31*10]);
+//Synth.new(\sp1, [\gate,1, \fr1,66, \freq1,2.5*1/2]);
+//Synth.new(\sp1, [\gate,1, \fr1,70, \freq1,2.6*1/2]);
+Synth.new(\sp1, [\gate,1, \fr1,72, \freq1,0.32*10]);
+//Synth.new(\sp1, [\gate,1, \fr1,77, \freq1,2.8*1/2]);
+//Synth.new(\sp1, [\gate,1, \fr1,80, \freq1,2.9*1/2]);
+Synth.new(\sp1, [\gate,1, \fr1,81, \freq1,0.33*10]);
+//Synth.new(\sp1, [\gate,1, \fr1,84, \freq1,3.1*1/2]);
+//Synth.new(\sp1, [\gate,1, \fr1,88, \freq1,3.2*1/2]);
+//Synth.new(\sp1, [\gate,1, \fr1,90, \freq1,3.3*1/2]);
+//Synth.new(\sp1, [\gate,1, \fr1,96, \freq1,3.4*1/2]);
+//Synth.new(\sp1, [\gate,1, \fr1,99, \freq1,3.5*1/2]);
+//Synth.new(\sp1, [\gate,1, \fr1,100, \freq1,3.6*1/2]);
+//Synth.new(\sp1, [\gate,1, \fr1,108, \freq1,3.7*1/2]);
+//Synth.new(\sp1, [\gate,1, \fr1,110, \freq1,3.8*1/2]);
+//Synth.new(\sp1, [\gate,1, \fr1,120, \freq1,3.9*1/2]);
+//Synth.new(\sp1, [\gate,1, \fr1,121, \freq1,4*1/2]);
+//Synth.new(\sp1, [\gate,1, \fr1,132, \freq1,4.1*1/2]);
+//Synth.new(\sp1, [\gate,1, \fr1,144, \freq1,4.2*1/2]);
+);
+			(32.rrand(16)).wait;});0.yield});
+
+	}
+)
+);
+)
+
+(
+Tdef(\pattern_tria1).play;
+Synth.new(\tessera1);
+s.record(numChannels:2);
+)
+////////////////
+////////////////
