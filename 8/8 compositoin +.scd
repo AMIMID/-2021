@@ -1,0 +1,286 @@
+(
+(
+SynthDef(\c1,
+	{   arg azimuth,decay,mul;
+		var audio,sig,env;
+		mul=mul*2;
+		env = EnvGen.ar(Env.perc(releaseTime:decay),doneAction:2);
+		sig = (SinOsc.ar(1*mul,mul:1)
+	+
+	SinOsc.ar(2*mul,mul:1)
+	+
+	SinOsc.ar(3*mul,mul:1)
+	+
+	SinOsc.ar(4*mul,mul:1)
+	+
+	SinOsc.ar(5*mul,mul:1)
+	+
+	SinOsc.ar(6*mul,mul:1)
+	+
+	SinOsc.ar(7*mul,mul:1)
+	+
+	SinOsc.ar(8*mul,mul:1)
+	+
+	SinOsc.ar(9*mul,mul:1)
+	+
+	SinOsc.ar(10*mul,mul:1)
+
+)+(SinOsc.ar(1*mul*2,mul:1/2)
+	+
+	SinOsc.ar(2*mul*2,mul:1/2)
+	+
+	SinOsc.ar(3*mul*2,mul:1/2)
+	+
+	SinOsc.ar(4*mul*2,mul:1/2)
+	+
+	SinOsc.ar(5*mul*2,mul:1/2)
+	+
+	SinOsc.ar(6*mul*2,mul:1/2)
+	+
+	SinOsc.ar(7*mul*2,mul:1/2)
+	+
+	SinOsc.ar(8*mul*2,mul:1/2)
+	+
+	SinOsc.ar(9*mul*2,mul:1/2)
+	+
+	SinOsc.ar(10*mul*2,mul:1/2)
+)
+		+(SinOsc.ar(1*mul*2,mul:1/3)
+	+
+	SinOsc.ar(2*mul*3,mul:1/3)
+	+
+	SinOsc.ar(3*mul*3,mul:1/3)
+	+
+	SinOsc.ar(4*mul*3,mul:1/3)
+	+
+	SinOsc.ar(5*mul*3,mul:1/3)
+	+
+	SinOsc.ar(6*mul*3,mul:1/3)
+	+
+	SinOsc.ar(7*mul*3,mul:1/3)
+	+
+	SinOsc.ar(8*mul*3,mul:1/3)
+	+
+	SinOsc.ar(9*mul*3,mul:1/3)
+	+
+	SinOsc.ar(10*mul*3,mul:1/3)
+)
+		+(SinOsc.ar(1*mul*4,mul:1/4)
+	+
+	SinOsc.ar(2*mul*4,mul:1/4)
+	+
+	SinOsc.ar(3*mul*4,mul:1/4)
+	+
+	SinOsc.ar(4*mul*4,mul:1/4)
+	+
+	SinOsc.ar(5*mul*4,mul:1/4)
+	+
+	SinOsc.ar(6*mul*4,mul:1/4)
+	+
+	SinOsc.ar(7*mul*4,mul:1/4)
+	+
+	SinOsc.ar(8*mul*4,mul:1/4)
+	+
+	SinOsc.ar(9*mul*4,mul:1/4)
+	+
+	SinOsc.ar(10*mul*4,mul:1/4)
+)
+		+(SinOsc.ar(1*mul*5,mul:1/5)
+	+
+	SinOsc.ar(2*mul*5,mul:1/5)
+	+
+	SinOsc.ar(3*mul*5,mul:1/5)
+	+
+	SinOsc.ar(4*mul*5,mul:1/5)
+	+
+	SinOsc.ar(5*mul*5,mul:1/5)
+	+
+	SinOsc.ar(6*mul*5,mul:1/5)
+	+
+	SinOsc.ar(7*mul*5,mul:1/5)
+	+
+	SinOsc.ar(8*mul*5,mul:1/5)
+	+
+	SinOsc.ar(9*mul*5,mul:1/5)
+	+
+	SinOsc.ar(10*mul*5,mul:1/5)
+)
+		+(SinOsc.ar(1*mul*6,mul:1/6)
+	+
+	SinOsc.ar(2*mul*6,mul:1/6)
+	+
+	SinOsc.ar(3*mul*6,mul:1/6)
+	+
+	SinOsc.ar(4*mul*6,mul:1/6)
+	+
+	SinOsc.ar(5*mul*6,mul:1/6)
+	+
+	SinOsc.ar(6*mul*6,mul:1/6)
+	+
+	SinOsc.ar(7*mul*6,mul:1/6)
+	+
+	SinOsc.ar(8*mul*6,mul:1/6)
+	+
+	SinOsc.ar(9*mul*6,mul:1/6)
+	+
+	SinOsc.ar(10*mul*6,mul:1/6)
+)
+		+(SinOsc.ar(1*mul*7,mul:1/7)
+	+
+	SinOsc.ar(2*mul*7,mul:1/7)
+	+
+	SinOsc.ar(3*mul*7,mul:1/7)
+	+
+	SinOsc.ar(4*mul*7,mul:1/7)
+	+
+	SinOsc.ar(5*mul*7,mul:1/7)
+	+
+	SinOsc.ar(6*mul*7,mul:1/7)
+	+
+	SinOsc.ar(7*mul*7,mul:1/7)
+	+
+	SinOsc.ar(8*mul*7,mul:1/7)
+	+
+	SinOsc.ar(9*mul*7,mul:1/7)
+	+
+	SinOsc.ar(10*mul*7,mul:1/7)
+)
+		+(SinOsc.ar(1*mul*8,mul:1/8)
+	+
+	SinOsc.ar(2*mul*8,mul:1/8)
+	+
+	SinOsc.ar(3*mul*8,mul:1/8)
+	+
+	SinOsc.ar(4*mul*8,mul:1/8)
+	+
+	SinOsc.ar(5*mul*8,mul:1/8)
+	+
+	SinOsc.ar(6*mul*8,mul:1/8)
+	+
+	SinOsc.ar(7*mul*8,mul:1/8)
+	+
+	SinOsc.ar(8*mul*8,mul:1/8)
+	+
+	SinOsc.ar(9*mul*8,mul:1/8)
+	+
+	SinOsc.ar(10*mul*8,mul:1/8)
+)
+		+(SinOsc.ar(1*mul*9,mul:1/9)
+	+
+	SinOsc.ar(2*mul*9,mul:1/9)
+	+
+	SinOsc.ar(3*mul*9,mul:1/9)
+	+
+	SinOsc.ar(4*mul*9,mul:1/9)
+	+
+	SinOsc.ar(5*mul*9,mul:1/9)
+	+
+	SinOsc.ar(6*mul*9,mul:1/9)
+	+
+	SinOsc.ar(7*mul*9,mul:1/9)
+	+
+	SinOsc.ar(8*mul*9,mul:1/9)
+	+
+	SinOsc.ar(9*mul*9,mul:1/9)
+	+
+	SinOsc.ar(10*mul*9,mul:1/9)
+)
+		+(SinOsc.ar(1*mul*10,mul:1/10)
+	+
+	SinOsc.ar(2*mul*10,mul:1/10)
+	+
+	SinOsc.ar(3*mul*10,mul:1/10)
+	+
+	SinOsc.ar(4*mul*10,mul:1/10)
+	+
+	SinOsc.ar(5*mul*10,mul:1/10)
+	+
+	SinOsc.ar(6*mul*10,mul:1/10)
+	+
+	SinOsc.ar(7*mul*10,mul:1/10)
+	+
+	SinOsc.ar(8*mul*10,mul:1/10)
+	+
+	SinOsc.ar(9*mul*10,mul:1/10)
+	+
+	SinOsc.ar(10*mul*10,mul:1/10)
+);
+
+		audio= PanAz.ar(2,sig,azimuth);
+	Out.ar(0,audio*env);
+}
+).add;
+);
+(
+Tdef(\pattern_c,
+      {
+1.do({((
+
+a= Pdef(\p_c1,
+ Pbind(*[
+    instrument: \c1,
+					\dur,1.72,
+					\decay,1.72,
+					\mul,Pseq([49.00,87.31,155.56,58.27,146.83,130.81,116.54,73.42,98.00,130.81,49.00,116.54,58.27,110.00,116.54,73.42,98.00,49.00,87.31,155.56,58.27,146.83,130.81,116.54,73.42,98.00,130.81,49.00,116.54,58.27,110.00,116.54,73.42,130.81],inf),
+					\azimuth,Pxrand(#[0.5,-0.5],inf);
+])
+
+).play(quant:1)
+	)); 0.yield});
+
+	}
+)
+);
+)
+
+TempoClock.default.tempo =8;
+(
+Tdef(\pattern_c).play;
+//s.record(numChannels:2);
+)
+Tdef(\pattern_c).stop
+Tdef(\pattern_c).pause
+Tdef(\pattern_c).reset
+y.play
+y.stop
+z.stop
+(SinOsc.ar(1*mul,mul:0.001)
+	+
+	SinOsc.ar(2*mul,mul:0.05)
+	+
+	SinOsc.ar(3*mul,mul:0.1)
+	+
+	SinOsc.ar(4*mul,mul:0.15)
+	+
+	SinOsc.ar(5*mul,mul:0.2)
+	+
+	SinOsc.ar(6*mul,mul:0.25)
+	+
+	SinOsc.ar(7*mul,mul:0.3)
+	+
+	SinOsc.ar(8*mul,mul:0.35)
+	+
+	SinOsc.ar(9*mul,mul:0.4)
+	+
+	SinOsc.ar(10*mul,mul:0.5)
+	+
+	SinOsc.ar(11*mul,mul:0.55)
+	+
+	SinOsc.ar(12*mul,mul:0.6)
+	+
+	SinOsc.ar(13*mul,mul:0.65)
+	+
+	SinOsc.ar(14*mul,mul:0.7)
+	+
+	SinOsc.ar(15*mul,mul:0.75)
+	+
+	SinOsc.ar(16*mul,mul:0.8)
+	+
+	SinOsc.ar(17*mul,mul:0.85)
+	+
+	SinOsc.ar(18*mul,mul:0.9)
+	+
+	SinOsc.ar(19*mul,mul:0.95)
+	+
+	SinOsc.ar(20*mul,mul:1)
+)
